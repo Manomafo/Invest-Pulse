@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <div class="box">
+        <form>
+            <div class="title">
+                <h1>INVEST PULSE</h1>
+            </div>
+
+            <div class="input-box">
+                <label for="text" class="label-color"> E-mail ou usuário</label>
+                <div class="content-input">
+
+                    <span class="material-symbols-outlined" style="color: #cdd1d2;">
+                        person
+                    </span>
+
+                    <input id="text" name="text" type="text" class="" placeholder="Nome" required />
+                </div>
+
+                <label for="password" class="label-color"> Senha</label>
+                <div class="content-input">
+
+                    <span class="material-symbols-outlined" style="color: #cdd1d2;">
+                        lock
+                    </span>
+
+                    <input id="password" name="password" type="password" placeholder="Senha" required />
+                    <div onclick="togleVisibility()">
+
+                        <span id="visibility" class="material-symbols-outlined"
+                            style="color: #cdd1d2; background-color: transparent; border: none; cursor: pointer;">
+                            visibility
+                        </span>
+
+                        <span id="visibility-off" class="material-symbols-outlined"
+                            style="color: #cdd1d2; background-color: transparent; border: none; cursor: pointer; display: none;">
+                            visibility_off
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+                <input type="submit" class="Login" value="Entrar" />
+                <p class="link-text">Esqueceu a senha ? <a href="#">
+                        Clique aqui</a></p>
+
+                <p class="link-text">
+                    Não tem uma conta ?
+
+                    <a href="#">
+                        Clique aqui</a>
+
+                </p>
+            </div>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>
