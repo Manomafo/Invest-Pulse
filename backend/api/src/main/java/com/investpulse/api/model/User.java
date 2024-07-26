@@ -1,5 +1,10 @@
 package com.investpulse.api.model;
 
+import java.time.Instant;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -20,6 +25,9 @@ public class User {
     private String email;
 
     @Column(nullable = false)
+    private int cpf;
+
+    @Column(nullable = false)
     private String fullName;
 
     @Column(unique = true, nullable = false)
@@ -30,4 +38,11 @@ public class User {
 
     private String investmentAdvisor;
 
+    @CreatedDate
+    @Column(nullable = false)
+    private Instant createdAt;
+
+    @LastModifiedDate
+    @Column(nullable = false)
+    private Instant updatedAt;
 }

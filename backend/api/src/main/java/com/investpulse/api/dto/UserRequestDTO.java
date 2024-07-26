@@ -9,6 +9,8 @@ public class UserRequestDTO {
 
     private String email;
 
+    private int cpf;
+
     private String fullName;
 
     private int phoneNumber;
