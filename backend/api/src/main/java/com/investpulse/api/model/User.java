@@ -25,13 +25,13 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    private int cpf;
+    private String cpf;
 
     @Column(nullable = false)
     private String fullName;
 
     @Column(unique = true, nullable = false)
-    private int phoneNumber;
+    private String phoneNumber;
 
     @Column(nullable = false)
     private String password;

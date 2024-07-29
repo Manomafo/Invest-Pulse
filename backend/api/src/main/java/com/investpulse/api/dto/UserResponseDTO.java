@@ -12,11 +12,11 @@ public class UserResponseDTO {
 
     private String email;
 
-    private int cpf;
+    private String cpf;
 
     private String fullName;
 
-    private int phoneNumber;
+    private String phoneNumber;
 
     private String investmentAdvisor;
 
