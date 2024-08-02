@@ -4,6 +4,8 @@ import lombok.Data;
 
 import java.time.Instant;
 
+import com.investpulse.api.model.User;
+
 import lombok.AllArgsConstructor;
 
 @Data
@@ -23,4 +25,14 @@ public class UserResponseDTO {
     private Instant createdAt;
 
     private Instant updatedAt;
+
+    public UserResponseDTO(User user) {
+        this.email = user.getEmail();
+        this.cpf = user.getCpf();
+        this.fullName = user.getFullName();
+        this.phoneNumber = user.getPhoneNumber();
+        this.investmentAdvisor = user.getInvestmentAdvisor();
+        this.createdAt = user.getCreatedAt();
+        this.updatedAt = user.getUpdatedAt();
+    }
 }

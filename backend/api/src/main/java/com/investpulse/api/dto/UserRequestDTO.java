@@ -1,5 +1,7 @@
 package com.investpulse.api.dto;
 
+import com.investpulse.api.model.User;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -18,5 +20,9 @@ public class UserRequestDTO {
     private String password;
 
     private String investmentAdvisor;
+
+    public User toUser() {
+        return new User(this);
+    }
 
 }
