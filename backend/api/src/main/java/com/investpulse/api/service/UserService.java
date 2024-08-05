@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.investpulse.api.dto.UserRequestDTO;
 import com.investpulse.api.dto.UserResponseDTO;
+import com.investpulse.api.exception.NotFoundException;
 import com.investpulse.api.model.User;
 import com.investpulse.api.repository.UserRepository;
 
@@ -23,6 +24,11 @@ public class UserService {
 
     public List<UserResponseDTO> getAllUsers() {
         List<User> userList = userRepository.findAll();
+
+        if (userList.isEmpty()) {
+            throw new NotFoundException("Não foi possível encontrar usuários", "Não há usuários cadastrados");
+        }
+
         return userList.stream()
                 .map(User::toUserResponseDTO)
                 .collect(Collectors.toList());
@@ -31,7 +37,7 @@ public class UserService {
     public UserResponseDTO getUserByEmail(String email) {
         Optional<User> optionalUser = userRepository.findById(email);
         if (!optionalUser.isPresent()) {
-            return null;
+            throw new NotFoundException();
         }
 
         return new UserResponseDTO(optionalUser.get());
@@ -59,7 +65,7 @@ public class UserService {
 
         Optional<User> optionalUser = userRepository.findById(email);
         if (!optionalUser.isPresent()) {
-            return null;
+            throw new NotFoundException();
         }
 
         User existingUser = optionalUser.get();
@@ -84,7 +90,9 @@ public class UserService {
 
     public void deleteUserByEmail(String email) {
         Optional<User> optionalUser = userRepository.findById(email);
-        if (optionalUser.isPresent()) {
+        if (!optionalUser.isPresent()) {
+            throw new NotFoundException();
+        } else {
             userRepository.deleteById(email);
         }
     }
