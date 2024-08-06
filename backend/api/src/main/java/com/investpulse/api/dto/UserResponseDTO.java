@@ -20,8 +20,6 @@ public class UserResponseDTO {
 
     private String phoneNumber;
 
-    private String investmentAdvisor;
-
     private Instant createdAt;
 
     private Instant updatedAt;
@@ -31,7 +29,6 @@ public class UserResponseDTO {
         this.cpf = user.getCpf();
         this.fullName = user.getFullName();
         this.phoneNumber = user.getPhoneNumber();
-        this.investmentAdvisor = user.getInvestmentAdvisor();
         this.createdAt = user.getCreatedAt();
         this.updatedAt = user.getUpdatedAt();
     }

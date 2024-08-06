@@ -41,8 +41,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    private String investmentAdvisor;
-
     @CreatedDate
     @Column(nullable = false)
     private Instant createdAt;
@@ -57,7 +55,6 @@ public class User {
         this.fullName = user.getFullName();
         this.phoneNumber = user.getPhoneNumber();
         this.password = user.getPassword();
-        this.investmentAdvisor = user.getInvestmentAdvisor();
         this.createdAt = Instant.now();
         this.updatedAt = Instant.now();
     }

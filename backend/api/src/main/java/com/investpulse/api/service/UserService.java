@@ -59,7 +59,7 @@ public class UserService {
     }
 
     public UserResponseDTO putUpdateUser(String email, UserRequestDTO user) {
-        if (user.getFullName() == null && user.getPassword() == null && user.getInvestmentAdvisor() == null) {
+        if (user.getFullName() == null && user.getPassword() == null) {
             return null;
         }
 
@@ -76,11 +76,6 @@ public class UserService {
 
         if (user.getPassword() != null && !user.getPassword().equals(existingUser.getPassword())) {
             existingUser.setPassword(user.getPassword());
-        }
-
-        if (user.getInvestmentAdvisor() != null
-                && !user.getInvestmentAdvisor().equals(existingUser.getInvestmentAdvisor())) {
-            existingUser.setInvestmentAdvisor(user.getInvestmentAdvisor());
         }
 
         existingUser.setUpdatedAt(Instant.now());

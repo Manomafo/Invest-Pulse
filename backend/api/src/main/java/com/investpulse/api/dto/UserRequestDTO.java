@@ -19,8 +19,6 @@ public class UserRequestDTO {
 
     private String password;
 
-    private String investmentAdvisor;
-
     public User toUser() {
         return new User(this);
     }
