@@ -17,6 +17,9 @@ import com.investpulse.api.dto.UserRequestDTO;
 import com.investpulse.api.dto.UserResponseDTO;
 import com.investpulse.api.service.UserService;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
+
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
@@ -33,23 +36,23 @@ public class UserController {
         }
 
         @GetMapping("/{email}")
-        private ResponseEntity<UserResponseDTO> getUserByEmail(@PathVariable String email) {
+        private ResponseEntity<UserResponseDTO> getUserByEmail(@PathVariable @Email String email) {
                 return ResponseEntity.ok(userService.getUserByEmail(email));
         }
 
         @PostMapping
-        private ResponseEntity<UserResponseDTO> postCreateUser(@RequestBody UserRequestDTO user) {
+        private ResponseEntity<UserResponseDTO> postCreateUser(@RequestBody @Valid UserRequestDTO user) {
                 return ResponseEntity.status(HttpStatus.CREATED).body(userService.postCreateUser(user));
         }
 
         @PutMapping("/{email}")
-        private ResponseEntity<UserResponseDTO> putUpdateUser(@PathVariable String email,
+        private ResponseEntity<UserResponseDTO> putUpdateUser(@PathVariable @Email String email,
                         @RequestBody UserRequestDTO user) {
                 return ResponseEntity.ok(userService.putUpdateUser(email, user));
         }
 
         @DeleteMapping("/{email}")
-        private ResponseEntity<Object> deleteUserByEmail(@PathVariable String email) {
+        private ResponseEntity<Object> deleteUserByEmail(@PathVariable @Email String email) {
                 userService.deleteUserByEmail(email);
                 return ResponseEntity.noContent().build();
         }
