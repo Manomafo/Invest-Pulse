@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.investpulse.api.dto.UserRequestDTO;
 import com.investpulse.api.dto.UserResponseDTO;
+import com.investpulse.api.exception.EntityAlreadyExistsException;
 import com.investpulse.api.exception.NotFoundException;
 import com.investpulse.api.model.User;
 import com.investpulse.api.repository.UserRepository;
@@ -46,12 +47,12 @@ public class UserService {
     public UserResponseDTO postCreateUser(UserRequestDTO user) {
         Optional<User> optionalUserById = userRepository.findById(user.getEmail());
         if (optionalUserById.isPresent()) {
-            return null;
+            throw new EntityAlreadyExistsException();
         }
 
         Optional<User> optionalUserByPhoneNumber = userRepository.findByPhoneNumber(user.getPhoneNumber());
         if (optionalUserByPhoneNumber.isPresent()) {
-            return null;
+            throw new EntityAlreadyExistsException();
         }
 
         return userRepository.save(user.toUser()).toUserResponseDTO();

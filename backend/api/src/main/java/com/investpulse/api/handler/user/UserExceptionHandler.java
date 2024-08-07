@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import com.investpulse.api.dto.BeanValideitionErrorMessageDTO;
 import com.investpulse.api.dto.DefaultErrorMessageDTO;
+import com.investpulse.api.exception.EntityAlreadyExistsException;
 import com.investpulse.api.exception.NotFoundException;
 
 @ControllerAdvice
@@ -28,6 +29,15 @@ public class UserExceptionHandler extends ResponseEntityExceptionHandler {
         DefaultErrorMessageDTO errorDTO = new DefaultErrorMessageDTO(HttpStatus.NOT_FOUND.value(),
                 exception.getMessage(), exception.getDescription());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorDTO);
+    }
+
+    @ExceptionHandler(EntityAlreadyExistsException.class)
+    @ResponseBody
+    public ResponseEntity<DefaultErrorMessageDTO> handlerEntityAlreadyExistsExceptoin(
+            EntityAlreadyExistsException exception) {
+        DefaultErrorMessageDTO errorDTO = new DefaultErrorMessageDTO(HttpStatus.CONFLICT.value(),
+                exception.getMessage(), exception.getDescription());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(errorDTO);
     }
 
     @Override
