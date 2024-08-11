@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.investpulse.api.dto.UserRequestDTO;
 import com.investpulse.api.dto.UserResponseDTO;
+import com.investpulse.api.dto.UserPatchUpdateDTO;
+import com.investpulse.api.dto.UserPutUpdateDTO;
 import com.investpulse.api.exception.EntityAlreadyExistsException;
 import com.investpulse.api.exception.NotFoundException;
 import com.investpulse.api.model.User;
@@ -59,7 +61,28 @@ public class UserService {
 
     }
 
-    public UserResponseDTO putUpdateUser(String email, UserRequestDTO user) {
+    public UserResponseDTO putUpdateUser(String email, UserPutUpdateDTO user) {
+        Optional<User> optionalUser = userRepository.findById(email);
+        if (!optionalUser.isPresent()) {
+            throw new NotFoundException();
+        }
+
+        User existingUser = optionalUser.get();
+
+        if (!user.getFullName().equals(existingUser.getFullName())) {
+            existingUser.setFullName(user.getFullName());
+        }
+
+        if (!user.getPassword().equals(existingUser.getPassword())) {
+            existingUser.setPassword(user.getPassword());
+        }
+
+        existingUser.setUpdatedAt(Instant.now());
+
+        return userRepository.save(existingUser).toUserResponseDTO();
+    }
+
+    public UserResponseDTO patchUpdateUser(String email, UserPatchUpdateDTO user) {
         if (user.getFullName() == null && user.getPassword() == null) {
             return null;
         }

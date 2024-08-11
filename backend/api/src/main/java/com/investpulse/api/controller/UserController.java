@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.investpulse.api.dto.UserRequestDTO;
 import com.investpulse.api.dto.UserResponseDTO;
+import com.investpulse.api.dto.UserPatchUpdateDTO;
+import com.investpulse.api.dto.UserPutUpdateDTO;
 import com.investpulse.api.service.UserService;
 
 import jakarta.validation.Valid;
@@ -47,8 +50,14 @@ public class UserController {
 
         @PutMapping("/{email}")
         private ResponseEntity<UserResponseDTO> putUpdateUser(@PathVariable @Email String email,
-                        @RequestBody UserRequestDTO user) {
+                        @RequestBody @Valid UserPutUpdateDTO user) {
                 return ResponseEntity.ok(userService.putUpdateUser(email, user));
+        }
+
+        @PatchMapping("/{email}")
+        private ResponseEntity<UserResponseDTO> patchUpdateUser(@PathVariable @Email String email,
+                        @RequestBody @Valid UserPatchUpdateDTO user) {
+                return ResponseEntity.ok(userService.patchUpdateUser(email, user));
         }
 
         @DeleteMapping("/{email}")
