@@ -34,11 +34,20 @@ public class UserExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(EntityAlreadyExistsException.class)
     @ResponseBody
-    public ResponseEntity<DefaultErrorMessageDTO> handlerEntityAlreadyExistsExceptoin(
+    public ResponseEntity<DefaultErrorMessageDTO> handlerEntityAlreadyExistsException(
             EntityAlreadyExistsException exception) {
         DefaultErrorMessageDTO errorDTO = new DefaultErrorMessageDTO(HttpStatus.CONFLICT.value(),
                 exception.getMessage(), exception.getDescription());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(errorDTO);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseBody
+    public ResponseEntity<DefaultErrorMessageDTO> handlerIllegalArgumentException(IllegalArgumentException exception) {
+        DefaultErrorMessageDTO errorDTO = new DefaultErrorMessageDTO(HttpStatus.BAD_REQUEST.value(),
+                exception.getMessage(),
+                "Para efetuar uma atualização de um usuario, deve ser fornecido pelo menos um campo do usuario");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorDTO);
     }
 
     @Override

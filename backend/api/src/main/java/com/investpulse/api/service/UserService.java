@@ -84,7 +84,7 @@ public class UserService {
 
     public UserResponseDTO patchUpdateUser(String email, UserPatchUpdateDTO user) {
         if (user.getFullName() == null && user.getPassword() == null) {
-            return null;
+            throw new IllegalArgumentException("Deve ser fornecido pelo menos um campo para atualizar o usuario");
         }
 
         Optional<User> optionalUser = userRepository.findById(email);
