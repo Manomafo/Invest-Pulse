@@ -15,13 +15,17 @@ import com.investpulse.api.exception.EntityAlreadyExistsException;
 import com.investpulse.api.exception.NotFoundException;
 import com.investpulse.api.model.User;
 import com.investpulse.api.repository.UserRepository;
+import com.investpulse.api.util.PasswordEncryptor;
 
 @Service
 public class UserService {
 
+    private PasswordEncryptor encryptor;
+
     private UserRepository userRepository;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(PasswordEncryptor encryptor, UserRepository userRepository) {
+        this.encryptor = encryptor;
         this.userRepository = userRepository;
     }
 
@@ -57,6 +61,7 @@ public class UserService {
             throw new EntityAlreadyExistsException();
         }
 
+        user.setPassword(encryptor.encrypt(user.getPassword()));
         return userRepository.save(user.toUser()).toUserResponseDTO();
 
     }
@@ -73,8 +78,8 @@ public class UserService {
             existingUser.setFullName(user.getFullName());
         }
 
-        if (!user.getPassword().equals(existingUser.getPassword())) {
-            existingUser.setPassword(user.getPassword());
+        if (!encryptor.matches(user.getPassword(), existingUser.getPassword())) {
+            existingUser.setPassword(encryptor.encrypt(user.getPassword()));
         }
 
         existingUser.setUpdatedAt(Instant.now());
@@ -98,8 +103,8 @@ public class UserService {
             existingUser.setFullName(user.getFullName());
         }
 
-        if (user.getPassword() != null && !user.getPassword().equals(existingUser.getPassword())) {
-            existingUser.setPassword(user.getPassword());
+        if (user.getPassword() != null && !encryptor.matches(user.getPassword(), existingUser.getPassword())) {
+            existingUser.setPassword(encryptor.encrypt(user.getPassword()));
         }
 
         existingUser.setUpdatedAt(Instant.now());
