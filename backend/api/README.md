@@ -16,7 +16,7 @@ Maven | 3.6.3
 
 ### 1. Clone do repositório
 
-Colne o repositóro para a sua máquina usando o seguinte comnado:
+Clone o repositóro para a sua máquina usando o seguinte comando:
 
 ``` bash
  git clone https://github.com/Manomafo/Invest-Pulse.git
@@ -25,7 +25,7 @@ Colne o repositóro para a sua máquina usando o seguinte comnado:
 
 ### 2. Instalação de dependência
 
-Execute o segunte comnado para instalar as dependências:
+Execute o segunte comando para instalar as dependências:
 
 ``` bash
  mvn clean package
@@ -225,7 +225,7 @@ Atualizar parcialmente um user no banco de dados
 <!-- markdownlint-disable-next-line MD033 -->
 <h4 id="put-api-user">PUT /api/user/{email}</h4>
 
-Atualizar parcialmente um user no banco de dados
+Atualizar os dados de um user no banco de dados
 
 **Formato:**
 
