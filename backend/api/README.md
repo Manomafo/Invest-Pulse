@@ -82,7 +82,7 @@ Registrar um novo user no banco de dados
 {
   "email": "elaine-darocha81@gmail.com",
   "phoneNumber": "79984489684",
-  "cpf": "454.950.858-25",
+  "cpf": "45495085825",
   "fullName": "Elaine Aparecida da Rocha",
   "password": "Aq6eSL5QtI"
 }
@@ -95,7 +95,7 @@ Registrar um novo user no banco de dados
 ``` json
 {
   "email": "elaine-darocha81@gmail.com",
-  "cpf": "454.950.858-25",
+  "cpf": "45495085825",
   "fullName": "Elaine Aparecida da Rocha",
   "phoneNumber": "79984489684",
   "createdAt": "2024-08-30T13:16:51.688121018Z",
@@ -128,7 +128,7 @@ Obtenha os dados de um user no banco de dados
 ``` json
 {
   "email": "elaine-darocha81@gmail.com",
-  "cpf": "454.950.858-25",
+  "cpf": "45495085825",
   "fullName": "Elaine Aparecida da Rocha",
   "phoneNumber": "79984489684",
   "createdAt": "2024-08-30T13:16:51.688121Z",
@@ -162,7 +162,7 @@ Obtenha todos os users registrados no banco de dados
 [
     {
         "email": "elaine-darocha81@gmail.com",
-        "cpf": "454.950.858-25",
+        "cpf": "45495085825",
         "fullName": "Elaine Aparecida da Rocha",
         "phoneNumber": "79984489684",
         "createdAt": "2024-08-30T13:16:51.688121Z",
@@ -170,7 +170,7 @@ Obtenha todos os users registrados no banco de dados
     },
     {
         "email": "isabella_barros@gmail.com",
-        "cpf": "028.686.691-90",
+        "cpf": "02868669190",
         "fullName": "Isabella Isabel Clarice Barros",
         "phoneNumber": "27989586132",
         "createdAt": "2024-08-30T13:16:51.688121Z",
@@ -215,7 +215,7 @@ Atualizar parcialmente um user no banco de dados
 ``` json
 {
   "email": "elaine-darocha81@gmail.com",
-  "cpf": "454.950.858-25",
+  "cpf": "45495085825",
   "fullName": "Maria da Silva",
   "phoneNumber": "79984489684",
   "createdAt": "2024-08-30T13:16:51.688121018Z",
