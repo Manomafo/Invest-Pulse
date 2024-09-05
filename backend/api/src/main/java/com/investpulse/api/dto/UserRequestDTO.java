@@ -1,6 +1,8 @@
 package com.investpulse.api.dto;
 
+import org.hibernate.validator.constraints.br.CPF;
 import com.investpulse.api.model.User;
+import com.investpulse.api.validation.NotDifferentOfNumber;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -18,6 +20,7 @@ public class UserRequestDTO {
 
     @NotBlank(message = "O CPF não pode ser vazio")
     @Size(min = 11, max = 11, message = "O CPF deve ter exatamente 11 caracteres")
+    @CPF
     private String cpf;
 
     @NotBlank(message = "O nome completo não pode ser vazio")
@@ -25,6 +28,7 @@ public class UserRequestDTO {
     private String fullName;
 
     @NotBlank(message = "O numero de telefone não pode ser vazio")
+    @NotDifferentOfNumber(message = "O campo deve ter apenas numeros")
     @Size(min = 10, max = 11, message = "O numero de telefone deve ter de 10 ou 11 caracteres")
     private String phoneNumber;
 
