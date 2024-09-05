@@ -286,3 +286,5 @@ Deleta um user no banco de dados
 **Resposta:**
 
 * Status do HTTP: `204 NO CONTENT`
+
+[ERROS.md](https://github.com/Manomafo/Invest-Pulse/blob/api/backend/api/erros.md)

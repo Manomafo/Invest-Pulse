@@ -56,7 +56,7 @@ O email do fulano está dando erro porque tem que implementar o "@"
   }
 }
 ```
-<!-- TODO
+
 **Requisição:**
 
 ``` json
@@ -77,7 +77,7 @@ O email do fulano está dando erro porque tem que implementar o "@"
     "phoneNumber": "O numero de telefone não pode ter lertas"
   }
 }
-``` -->
+```
 
 ### Erros do cpf no metodo `POST`
 
@@ -102,7 +102,7 @@ O email do fulano está dando erro porque tem que implementar o "@"
   }
 }
 ```
-<!-- TODO
+
 **Requisição:**
 
 ``` json
@@ -123,7 +123,7 @@ O email do fulano está dando erro porque tem que implementar o "@"
     "cpf": "O CPF não pode ter letras"
   }
 }
-``` -->
+```
 
 ### Erros do fullName no metodo `POST`
 
@@ -305,3 +305,5 @@ O email do fulano está dando erro porque tem que implementar o "@"
   "description": "Não foi possivel encontrar ou recuperar o usuário"
 }
 ```
+
+[README.md](https://github.com/Manomafo/Invest-Pulse/blob/api/backend/api/README.md)
