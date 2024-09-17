@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
   }
-
+/* Header */
   header {
     display: flex;
     justify-content: space-between;
@@ -64,12 +64,12 @@
   
   .entrar,
   .cadastrar {
-    background-color: #000;
+    background-color: #222;
   }
   
   .entrar:hover,
   .cadastrar:hover {
-    background-color: #575757;
+    background-color: #57449a;
   }
   
   .calculadora:hover {
@@ -107,6 +107,50 @@
   }
 
 
+  /* Section */
+  section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fundo__video {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Cor do texto dentro da seção */
+  }
+  
+  /* Estilo para o vídeo de fundo */
+  .fundo__video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Garante que o vídeo fique atrás do conteúdo */
+  }
+  
+  .fundo__video img {
+    width: 40vh;
+    background: linear-gradient(to right, white, #ccc);
+    border-top-right-radius: 70px;
+    border-bottom-left-radius: 70px;
+    max-height: 250px;
+    max-width: 100%;
+    min-height: 50px;
+    object-fit: contain;
+  }
 
 
 
