@@ -92,6 +92,43 @@ nav button {
   cursor: pointer;
 }
 
+/* Seções */
+.top-section {
+    /* display: flex; */
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .top-section .left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .left h2 {
+    width: 100vh;
+    text-align: center;
+    color: #ffffff;
+    font-size: 40px;
+  }
+  
+  .top-section .right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo img,
+  .right img {
+    max-height: 250px;
+    max-width: 100%;
+    min-height: 50px;
+    object-fit: contain;
+  }
 
 
 
@@ -105,6 +142,32 @@ nav button {
 
 
 
+/* Responsividade */
+@media (max-width: 1086px) {
+    .calculadora {
+      max-width: 220px;
+      text-align: center;
+    }
+    .entrar {
+      max-width: 150px;
+      text-align: center;
+    }
+    .cadastrar {
+      max-width: 150px;
+      text-align: center;
+    }
+    
+    .top-section,
+    .bottom-section {
+      flex-direction: column;
+    }
+    
+    .left h2 {
+      margin: 80px 10px;
+      /* display: none; */
+    }
+
+}
 
 
 
@@ -146,4 +209,14 @@ nav button {
       max-width: 150px;
       text-align: center;
     }
+
+    .top-section,
+    .bottom-section {
+      flex-direction: column;
+    }
+  
+    .left h2 {
+      display: none;
+    }
+    
 }
