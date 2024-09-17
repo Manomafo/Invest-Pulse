@@ -93,7 +93,7 @@ nav button {
 }
 
 /* Seções */
-.top-section {
+  .top-section {
     /* display: flex; */
     background-color: #222;
     color: #fff;
@@ -199,8 +199,91 @@ nav button {
     padding: 5px;
   }
 
-
-
+    /* Footer */
+    .container {
+        /* min-width: 1170px; */
+        margin: auto;
+      }
+      
+      .row {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+      
+      ul {
+        list-style: none;
+      }
+      
+      .footer {
+        background-color: #24262b;
+        padding: 70px 0;
+      }
+      
+      .footer h2 {
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      
+      .footer-col {
+        width: 25%;
+        padding: 0 15px;
+      }
+      
+      .footer-col h4 {
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+      }
+      
+      .footer-col h4::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        background-color: #e91e63;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+      }
+      
+      .footer-col ul li:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      
+      .footer-col ul li a {
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+      }
+      
+      .footer-col ul li a:hover {
+        color: #ffffff;
+        padding-left: 8px;
+      }
+      
+      .footer-col ul li p {
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+      }
+      
+      .footer-col ul li p:hover {
+        color: #ffffff;
+        padding-left: 8px;
+      }
 
 
 
@@ -234,6 +317,18 @@ nav button {
     .left h2 {
       margin: 80px 10px;
       /* display: none; */
+    }
+
+    .row {
+        flex-direction: column;
+      }
+
+    .footer-col {
+        width: 100%;
+    }
+
+    .footer-col h4{
+        margin-top: 30px;
     }
 
 }
@@ -286,6 +381,20 @@ nav button {
   
     .left h2 {
       display: none;
+    }
+
+    .row {
+        flex-direction: column;
+      }
+
+
+      .footer-col {
+        width: 100%;
+    }
+
+    
+    .footer-col h4{
+        margin-top: 30px;
     }
     
 }
