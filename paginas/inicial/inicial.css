@@ -1,0 +1,149 @@
+/* Estilização geral */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wgth@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1px 5px;
+}
+
+header a {
+  text-decoration: none;
+  color: #000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Links do Header */
+  .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+nav button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.calculadora {
+  margin-left: 10px;
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.calculadora {
+  background-color: #222;
+}
+
+.entrar,
+.cadastrar {
+  background-color: #000;
+}
+
+.entrar:hover,
+.cadastrar:hover {
+  background-color: #575757;
+}
+
+.calculadora:hover {
+  background-color: #57449a;
+}
+
+/* Menu Hambúrguer */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+    nav .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #fff;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      text-align: right;
+    }
+    
+    .hamburger {
+      display: block;
+    }
+    
+    nav .nav-links.active {
+      display: flex;
+    }
+    
+    nav a {
+      margin: 10px 20px;
+      width: calc(100% - 40px);
+      text-align: right;
+    }
+  
+    .calculadora {
+      max-width: 220px;
+      text-align: center;
+    }
+    .entrar {
+      max-width: 150px;
+      text-align: center;
+    }
+    .cadastrar {
+      max-width: 150px;
+      text-align: center;
+    }
+}
