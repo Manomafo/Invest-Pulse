@@ -237,10 +237,6 @@ section {
   display: block;
 }
 
-.acoes:hover h3{
-  color: #fff;
-}
-
 
 .acoes img {
   width: 100px; /* Tamanho pequeno da imagem */
