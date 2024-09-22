@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #23242a;
+  height: 100vh;
+}
+
+.box {
+  position: relative;
+  width: 470px;
+  height: 850px;
+  background: #1c1c1c;
+  border-radius: 50px 5px;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 470px;
+  height: 850px;
+  background: linear-gradient(60deg, transparent, #ffffff, #ffffff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 470px;
+  height: 850px;
+  background: linear-gradient(60deg, transparent, #ffffff, #ffffff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+form {
+  position: absolute;
+  inset: 2px;
+  background: #28292d;
+  border-radius: 50px 5px;
+  z-index: 10;
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 100%;
+}
+
+.title h1 {
+  color: #0094e9;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+form .input-box input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  border-width: 3px;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 10px 0px 10px 0px;
+  color: white;
+}
+
+form .input-box input::placeholder {
+  color: #cdd1d2;
+}
+
+form .input-box input[type="submit"] {
+  background-color: #ffffff;
+  cursor: pointer;
+  color: #16100e;
+  filter: drop-shadow(0 5px 10px #ffffff);
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #ffffff;
+  cursor: pointer;
+  color: #16100e;
+  filter: drop-shadow(0 5px 10px #ffffff);
+  margin-bottom: 20px;
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+
+.label-color {
+  color: #9eb3b5;
+}

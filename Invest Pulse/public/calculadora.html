@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css">
+  <title>Calculadora de Investimentos Impressionadora</title>
+</head>
+
+<body class="h-[100dvh] grid grid-cols-3 grind-rows-2">
+  <aside class="h-[100dvh] col-span-1 bg-violet-900 flex flex-col justify-between py-5 px-2">
+    <header>
+      <a href="../public/inicial.html">
+        <div class="logo">
+          <img src="../src/inicial/img/gráficoSemFundo.png" alt="Logo">
+          <h1 class="empresa">Invest Pulse</h1>
+        </div>
+      </a>
+      <h1 class="text-violet-50 text-2xl font-bold text-center mt-8 ">Calculadora de Investimento</h1>
+
+    </header>
+    <form id="investment-form" class="w-full">
+      <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
+        <label for="starting-amount" class="font-bold text-violet-50">Investimento inicial</label>
+        <div class="flex">
+          <input value="R$" class="w-1/6 text-center rounded-l-lg" type="text" disabled>
+          <input type="text" class="w-5/6 rounded-r-lg px-2" placeholder="0.00" required id="starting-amount"
+            name="starting-amount">
+        </div>
+      </div>
+      <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
+        <label for="additional-contribution" class="font-bold text-violet-50">Aportes adicionais</label>
+        <div class="flex">
+          <input value="R$" class="w-1/6 text-center rounded-l-lg" type="text" disabled>
+          <input type="text" class="w-5/6 rounded-r-lg px-2" placeholder="0.00" name="additional-contribution"
+            id="additional-contribution">
+        </div>
+      </div>
+      <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
+        <label for="time-amount" class="font-bold text-violet-50">Prazo</label>
+        <div class="flex">
+          <input type="text" class="w-2/3 rounded-l-lg px-2" placeholder="0" id="time-amount" name="time-amount"
+            required>
+          <select id="time-amount-period" name="time-amount-period"
+            class="w-1/3 rounded-r-lg border-l-2 border-gray-900 text-center focus:bg-stone-800 focus:text-slate-200 hover:bg-stone-800 hover:text-slate-200">
+            <option value="monthly">Mensal</option>
+            <option value="yearly">Anual</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
+        <label for="return-rate" class="font-bold text-violet-50">Rentabilidade</label>
+        <div class="flex">
+          <input value="%" class="w-1/6 text-center rounded-l-lg" type="text" disabled>
+          <input type="text" class="w-1/2 px-2" placeholder="0%" id="return-rate" name="return-rate" required>
+          <select id="evaluation-period" name="evaluation-period"
+            class="w-1/3 rounded-r-lg border-l-2 border-gray-900 text-center focus:bg-stone-800 focus:text-slate-200 hover:bg-stone-800 hover:text-slate-200">
+            <option value="monthly">Mensal</option>
+            <option value="yearly">Anual</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
+        <label for="tax-rate" class="font-bold text-violet-50">Imposto sobre lucro</label>
+        <div class="flex">
+          <input value="%" class="w-1/6 text-center rounded-l-lg" type="text" disabled>
+          <input type="text" class="w-5/6 rounded-r-lg px-2" placeholder="0%" id="tax-rate" name="tax-rate" required>
+        </div>
+      </div>
+    </form>
+    <div class="flex h-12 px-6 my-8 w-full gap-4">
+      <button id="calculate-results" form="investment-form" type="submit"
+        class="w-1/2 rounded-lg transition ease-in-out delay-150 bg-stone-800 hover:-translate-y-1 hover:scale-110 hover:bg-stone-800 text-stone-200 duration-300">Calcular</button>
+      <button id="clear-form"
+        class="w-1/2 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-stone-800 text-stone-200 duration-300">Limpar</button>
+    </div>
+  </aside>
+  <main class="bg-violet-50 row-span-2 col-span-2 relative">
+    <button id="slide-arrow-previous"
+      class="absolute top-0 bottom-0 left-0 text-5xl cursor-pointer bg-slate-200 opacity-50 w-8 hover:opacity-100 focus:opacity-100 hidden">&#8249;</button>
+    <button id="slide-arrow-next"
+      class="absolute top-0 bottom-0 right-0 text-5xl cursor-pointer bg-slate-200 opacity-50 w-8 hover:opacity-100 focus:opacity-100 hidden">&#8250;</button>
+    <div id="carousel" class="h-full w-full flex overflow-x-scroll scroll-smooth">
+      <section id="charts-container" class="h-full basis-full shrink-0">
+        <div class="h-[36%] flex flex-col items-center pb-10">
+          <p class="text-gray-900 font-bold text-lg">Resultado Final</p>
+          <canvas id="final-money-distribution"></canvas>
+        </div>
+        <div class="h-[56%] flex flex-col items-center">
+          <p class="text-gray-900 font-bold text-lg">Progressão</p>
+          <canvas id="progression"></canvas>
+        </div>
+      </section>
+      <section id="table-container" class="h-screen overflow-y-auto basis-full shrink-0">
+        <p class="font-bold text-lg text-center">Resultados Mensais</p>
+        <table id="results-table" class="w-full max-h-full border border-separate"></table>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="../main.js"></script>
+</body>
+
+</html>

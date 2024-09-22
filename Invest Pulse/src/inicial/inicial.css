@@ -1,0 +1,378 @@
+/* Estilização geral */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wgth@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1px 5px;
+}
+
+header a {
+  text-decoration: none;
+  color: #000;
+}
+
+.container {
+  /* min-width: 1170px; */
+  max-width: 100%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer {
+  background-color: #24262b;
+  padding: 70px 0;
+}
+
+.footer h2 {
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-col ul li p {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li p:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+/* a {
+  text-decoration: none;
+  color: #000000;
+} */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Links do Header */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+nav button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.calculadora {
+  margin-left: 10px;
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.calculadora {
+  background-color: #222;
+}
+
+.entrar,
+.cadastrar {
+  background-color: #000;
+}
+
+.entrar:hover,
+.cadastrar:hover {
+  background-color: #575757;
+}
+
+.calculadora:hover {
+  background-color: #57449a;
+}
+
+/* Menu Hambúrguer */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Seções */
+.top-section {
+  /* display: flex; */
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+}
+
+.top-section .left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.left h2 {
+  width: 100vh;
+  text-align: center;
+  color: #ffffff;
+  font-size: 40px;
+}
+
+.top-section .right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img,
+.right img {
+  max-height: 250px;
+  max-width: 100%;
+  min-height: 50px;
+  object-fit: contain;
+}
+
+.bottom-section {
+  display: flex;
+  background-color: #222;
+  padding: 20px;
+}
+
+.bottom-section .left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-section .indices {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.bottom-section .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* border: 1px solid green; */
+}
+
+.bottom-section .right div {
+  padding: 20px 10px;
+  border: none;
+  background-color: #222;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  border-bottom: 1px solid #fff;
+  transition: background-color 0.3s ease;
+  font-size: 20px;
+}
+
+.bottom-section .right div:hover {
+  background-color: #57449a;
+}
+
+#Ibovespa,
+#CPLE3,
+#BBAS3,
+#IFRA11,
+#LFTS11 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.b3 {
+  width: 50px;
+  border-radius: 40px;
+}
+
+canvas {
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 1000px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #fff;
+  border-radius: 25px;
+  padding: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 1086px) {
+  .calculadora {
+    max-width: 220px;
+    text-align: center;
+  }
+  .entrar {
+    max-width: 150px;
+    text-align: center;
+  }
+  .cadastrar {
+    max-width: 150px;
+    text-align: center;
+  }
+
+  .top-section,
+  .bottom-section {
+    flex-direction: column;
+  }
+
+  .left h2 {
+    margin: 80px 10px;
+    /* display: none; */
+  }
+
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 886px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  nav .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    text-align: right;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav .nav-links.active {
+    display: flex;
+  }
+
+  nav button {
+    margin: 10px 20px;
+    width: calc(100% - 40px);
+    text-align: right;
+  }
+
+  .calculadora {
+    max-width: 220px;
+    text-align: center;
+  }
+  .entrar {
+    max-width: 150px;
+    text-align: center;
+  }
+  .cadastrar {
+    max-width: 150px;
+    text-align: center;
+  }
+
+  .top-section,
+  .bottom-section {
+    flex-direction: column;
+  }
+
+  .left h2 {
+    display: none;
+  }
+}
