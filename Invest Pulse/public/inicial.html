@@ -4,26 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INVEST PULSE</title>
     <link rel="stylesheet" href="../src/inicial/inicial.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>INVEST PULSE</title>
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <a href="../public/inicial.html">
             <div class="logo">
                 <img src="../src/inicial/img/gráficoSemFundo.png" alt="Logo">
-                <h1 class="empresa">Invest Pulse</h1>
+                <h1>Invest Pulse</h1>
             </div>
         </a>
         <nav>
-            <div class="hamburger" id="hamburger">
-                ☰
-            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="hamburger" id="hamburger">
+                <i class='bx bx-menu' id="menu-hamburger"></i>
+                <i class='bx bx-x' id="close-hamburger"></i>
+            </label>
             <div class="nav-links" id="nav-links">
-                <a class="calculadora" href="../public/login.html">Entrar com outro usuário</a>
-                <a class="calculadora" href="../public/cadastro.html">Cadastrar novo usuário</a>
-                <a class="calculadora" href="../public/calculadora.html">Calculadora de
+                <a class="login" style="--i:0" href="../public/login.html">Entrar com outro usuário</a>
+                <a class="cadastro" style="--i:1" href="../public/cadastro.html">Cadastrar novo usuário</a>
+                <a class="calculadora" style="--i:2" href="../public/calculadora.html">Calculadora de
                     Investimentos</a>
             </div>
         </nav>

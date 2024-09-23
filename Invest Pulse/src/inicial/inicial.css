@@ -5,25 +5,70 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
 }
 
 body {
   line-height: 1.5;
-  font-family: "Poppins", sans-serif;
 }
 
-/* Header */
-header {
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 2%;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  padding: 1px 5px;
+  z-index: 100;
 }
 
-header a {
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+}
+
+.logo {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links a {
+  font-size: 1.15rem;
+  color: #fff;
   text-decoration: none;
-  color: #000;
+  font-weight: 500;
+  margin-left: 2.5rem;
+}
+
+#check {
+  display: none;
+}
+
+.hamburger {
+  font-size: 2.8rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
 }
 
 .container {
@@ -111,81 +156,10 @@ ul {
   color: #ffffff;
   padding-left: 8px;
 }
-
-/* a {
-  text-decoration: none;
-  color: #000000;
-} */
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 40px;
-  margin-right: 10px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-}
-
-/* Links do Header */
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-
-nav button {
-  margin-left: 10px;
-  padding: 10px 15px;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.calculadora {
-  margin-left: 10px;
-  padding: 10px 15px;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.calculadora {
-  background-color: #222;
-}
-
-.entrar,
-.cadastrar {
-  background-color: #000;
-}
-
-.entrar:hover,
-.cadastrar:hover {
-  background-color: #575757;
-}
-
-.calculadora:hover {
-  background-color: #57449a;
-}
-
-/* Menu Hambúrguer */
-.hamburger {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-
 /* Seções */
 .top-section {
   /* display: flex; */
+  margin-top: 70px;
   background-color: #222;
   color: #fff;
   padding: 20px;
@@ -292,28 +266,60 @@ canvas {
 
 /* Responsividade */
 @media (max-width: 1086px) {
-  .calculadora {
-    max-width: 220px;
-    text-align: center;
-  }
-  .entrar {
-    max-width: 150px;
-    text-align: center;
-  }
-  .cadastrar {
-    max-width: 150px;
-    text-align: center;
+  .hamburger {
+    display: inline-flex;
   }
 
-  .top-section,
-  .bottom-section {
-    flex-direction: column;
+  #check:checked~.hamburger #menu-hamburger {
+    display: none;
+    
+  }
+  
+  .hamburger #close-hamburger {
+    display: none;
+  }
+  
+  #check:checked~.hamburger #close-hamburger {
+    display: block;
+
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #1d1d1d;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 .5rem 1rem #1d1d1d;
+    overflow: hidden;
+    transition: .3s ease;
+  }
+  
+  #check:checked~.nav-links {
+    height: 12rem;
+  }
+  
+  .nav-links a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: .3s ease;
+  }
+  
+  #check:checked~.nav-links a {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(.15s * var(--i));
   }
 
-  .left h2 {
+  /* .left h2 {
     margin: 80px 10px;
-    /* display: none; */
-  }
+  } */
 
   .footer-col {
     width: 50%;
@@ -328,44 +334,6 @@ canvas {
 }
 
 @media (max-width: 767px) {
-  nav .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    text-align: right;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  nav .nav-links.active {
-    display: flex;
-  }
-
-  nav button {
-    margin: 10px 20px;
-    width: calc(100% - 40px);
-    text-align: right;
-  }
-
-  .calculadora {
-    max-width: 220px;
-    text-align: center;
-  }
-  .entrar {
-    max-width: 150px;
-    text-align: center;
-  }
-  .cadastrar {
-    max-width: 150px;
-    text-align: center;
-  }
 
   .top-section,
   .bottom-section {
