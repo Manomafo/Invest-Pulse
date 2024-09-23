@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #23242a;
+  height: 100vh;
+}
+
+.box {
+  position: relative;
+  width: 370px;
+  height: 450px;
+  background: #1c1c1c;
+  border-radius: 50px 5px;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 370px;
+  height: 450px;
+  background: linear-gradient(60deg, transparent, #ffffff, #ffffff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 370px;
+  height: 450px;
+  background: linear-gradient(60deg, transparent, #ffffff, #ffffff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+form {
+  position: absolute;
+  inset: 2px;
+  background: #28292d;
+  border-radius: 50px 5px;
+  z-index: 10;
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 100%;
+}
+
+.title h1 {
+  color: #0094e9;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.content-input {
+  display: flex;
+  align-items: center;
+  background-color: #fffdfd33;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 10px 0px 10px 0px;
+  gap: 1rem;
+}
+
+form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+form .input-box input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+form .input-box input::placeholder {
+  color: #cdd1d2;
+}
+
+form .input-box input[type="submit"] {
+  background-color: #ffffff;
+  cursor: pointer;
+  color: #000000;
+  filter: drop-shadow(0 5px 10px #ffffff);
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 10px 0px 10px 0px;
+}
+
+form .link-text {
+  padding-top: 15px;
+  color: #0094e9;
+  font-size: 0.85rem;
+}
+
+form .link-text a {
+  text-decoration: none;
+  color: #4b4e93;
+  font-weight: 700;
+}
+
+.label-color {
+  color: #9eb3b5;
+}
