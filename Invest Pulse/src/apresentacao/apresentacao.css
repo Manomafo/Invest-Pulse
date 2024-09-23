@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wgth@300;400;500;600;700&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +6,9 @@
   font-family: "Poppins", sans-serif;
   text-decoration: none;
 }
-
 body {
   line-height: 1.5;
 }
-
 .header {
   position: absolute;
   top: 0;
@@ -24,7 +21,6 @@ body {
   align-items: center;
   z-index: 100;
 }
-
 .header::before {
   content: '';
   position: absolute;
@@ -36,7 +32,6 @@ body {
   backdrop-filter: blur(50px);
   z-index: -1;
 }
-
 .logo {
   color: #fff;
   display: flex;
@@ -45,12 +40,10 @@ body {
   align-items: center;
   gap: 20px;
 }
-
 .logo img {
   height: 40px;
   margin-right: 10px;
 }
-
 .nav-links a {
 font-size: 1.15rem;
 color: #fff;
@@ -58,11 +51,9 @@ text-decoration: none;
 font-weight: 500;
 margin-left: 2.5rem;
 }
-
 #check {
   display: none;
 }
-
 .hamburger {
   font-size: 2.8rem;
   color: #fff;
@@ -79,7 +70,6 @@ section {
   align-items: center;
   justify-content: center;
 }
-
 .fundo__video {
   position: relative;
   width: 100%;
@@ -90,7 +80,6 @@ section {
   justify-content: center;
   color: white; /* Cor do texto dentro da seção */
 }
-
 /* Estilo para o vídeo de fundo */
 .fundo__video video {
   position: absolute;
@@ -102,7 +91,6 @@ section {
   transform: translate(-50%, -50%);
   z-index: -1; /* Garante que o vídeo fique atrás do conteúdo */
 }
-
 .fundo__video img {
   width: 40vh;
   background: linear-gradient(to right, white, #ccc);
@@ -113,9 +101,7 @@ section {
   min-height: 50px;
   object-fit: contain;
 }
-
 /* Os dois H1 da pagina */
-
 .chamada {
   text-align: center;
   color: #57449a;
@@ -123,15 +109,12 @@ section {
   margin:50px;
   border-bottom: 1px solid #575757;
 }
-
 /* ////////// seção de informações ////////////////////////////////////////// */
-
 .informacao__acoes {
   width: 100%;
   /* padding: 20px; */
   background-image: url('./img/Orange\ and\ White\ Simple\ Business\ Webinar\ with\ Dynamic\ Frame\ LinkedIn\ Post.png');
 }
-
 .acoes {
   background-color: orange;
   /* color: #fff; */
@@ -145,41 +128,29 @@ section {
   border-bottom-right-radius: 70px;
   border-top-right-radius: 70px;
 }
-
 .acoes:hover{
   /* background-color: rgb(247, 191, 87); */
   width: 50%;
 }
-
 .acoes p {
   margin-left: 20px;
   visibility: hidden;
   opacity: 0;
   display: none;
 }
-
 .acoes h3 {
   margin-left: 20px;
 }
-
-
 .acoes:hover p{
   visibility: visible;
   opacity: 1;
   display: block;
 }
-
-
 .acoes img {
   width: 100px; /* Tamanho pequeno da imagem */
   border-radius: 50px;
 }
-
-
-
-
 /* Estilo seção de imagens */
-
 .div__img__1{
   display:flex;
   flex-direction: row;
@@ -188,12 +159,10 @@ section {
   background-color: #eceaea;
   border-radius: 20px;
 }
-
 .div__img__1 img {
   width: 50%;  
   border: 1px solid #222;
 }
-
 .div__img__2{
   display:flex;
   flex-direction: row;
@@ -202,56 +171,45 @@ section {
   background-color: #eceaea;
   border-radius: 20px;
 }
-
 .div__img__2 strong, .div__img__1 strong{
   color:#57449a
 }
-
 .div__img__2 img {
   width: 50%;  
 }
-
 .lorem1, .lorem2 {
   margin: 50px;
 }
-
 /* Estilo para o conteúdo da seção */
 .content {
   position: relative;
   z-index: 1;
   text-align: center;
 }
-
 .container {
-  min-width: 1170px;
+  /* min-width: 1170px; */
   margin: auto;
 }
-
 .row {
   display: flex;
 }
-
 ul {
   list-style: none;
 }
-
 .footer {
   background-color: #24262b;
   padding: 70px 0;
 }
-
 .footer h2 {
   color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 30px;
   text-align: center;
 }
-
 .footer-col {
   width: 25%;
   padding: 0 15px;
 }
-
 .footer-col h4 {
   font-size: 18px;
   color: #ffffff;
@@ -260,7 +218,6 @@ ul {
   font-weight: 500;
   position: relative;
 }
-
 .footer-col h4::before {
   content: "";
   position: absolute;
@@ -271,11 +228,9 @@ ul {
   box-sizing: border-box;
   width: 50px;
 }
-
 .footer-col ul li:not(:last-child) {
   margin-bottom: 10px;
 }
-
 .footer-col ul li a {
   font-size: 16px;
   text-transform: capitalize;
@@ -286,12 +241,10 @@ ul {
   display: block;
   transition: all 0.3s ease;
 }
-
 .footer-col ul li a:hover {
   color: #ffffff;
   padding-left: 8px;
 }
-
 .footer-col ul li p {
   font-size: 16px;
   color: #ffffff;
@@ -300,19 +253,15 @@ ul {
   display: block;
   transition: all 0.3s ease;
 }
-
 .footer-col ul li p:hover {
   color: #ffffff;
   padding-left: 8px;
 }
 
-
 @media (max-width: 1172px) {
-
   .hamburger {
     display: inline-flex;
   }
-
   #check:checked~.hamburger #menu-hamburger {
     display: none;
     
@@ -324,7 +273,6 @@ ul {
   
   #check:checked~.hamburger #close-hamburger {
     display: block;
-
   }
   
   .nav-links {
@@ -357,22 +305,117 @@ ul {
   #check:checked~.nav-links a {
     transform: translateY(0);
     opacity: 1;
-    transition-delay: calc(.15s * var(--i));
+    transition-delay: calc(.15s * var(--i)); 
+  }
+
+
+    section {
+      height: 40vh;
+    }
+    .fundo__video {
+      height: 40vh;
+    }
+    .fundo__video img {
+      display: none;
+    }
+
+  
+    body .div__img__1, body .div__img__2 {
+      display: none;
+    }
+    
+    body .chamada {
+      display: none;
+    }
+
+
+    .informacao__acoes {
+      background-position: center;
+      margin-top:20px;
+  
+    }
+
+    .acoes{
+      width: 40%;
+      justify-content: center;
+    }
+
+    .acoes:hover{
+      width: 40%;
+    }
+    .acoes:hover p {
+      display:none;
+    }
+
+    .acoes p{
+      display:none;
+    }
+
+    .row {
+      flex-direction: column;
+    }
+
+  .footer-col {
+      width: 25%;
+  }
+
+  .footer-col h4{
+      margin-top: 30px;
   }
 
 } 
 
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
+ 
   section {
     height: 40vh;
   }
-
   .fundo__video {
     height: 40vh;
   }
-
   .fundo__video img {
     display: none;
+  }
+
+  body .div__img__1, body .div__img__2 {
+    display: none;
+  }
+  
+  body .chamada {
+    display: none;
+  }
+
+  .acoes{
+    width: 100%;
+  }
+
+  .acoes:hover{
+    width: 100%;
+  }
+  .acoes:hover p {
+    display:none;
+  }
+
+  .acoes p{
+    display:none;
+  }
+
+
+  .informacao__acoes {
+    background-image: none;
+  }
+
+
+  .row {
+    flex-direction: column;
+  }
+
+  .footer-col {
+      width: 100%;
+  }
+
+  .footer-col h4{
+      margin-top: 30px;
   }
 }
