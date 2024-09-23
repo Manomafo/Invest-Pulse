@@ -1,36 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="apresentacao.css">
+    <link rel="stylesheet" href="./apresentacao.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Pagina de Apresentação</title>
 </head>
-
 <body>
-    <header>
-
-
-        <a href="./apresentacao.html">
+    <header class="header">
+        <a href="./index.html">
             <div class="logo">
                 <img src="./img/gráficoSemFundo.png" alt="Logo">
                 <h1>Invest Pulse</h1>
             </div>
         </a>
         <nav>
-            <div class="hamburger" id="hamburger">
-                ☰
-            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="hamburger" id="hamburger">
+                <i class='bx bx-menu' id="menu-hamburger"></i>
+                <i class='bx bx-x' id="close-hamburger"></i>
+            </label>
             <div class="nav-links" id="nav-links">
-                <a class="entrar" href="../login/login.html">Entrar</a>
-                <a class="cadastrar" href="../cadastro/cadastro.html">Cadastrar</a>
+                <a class="entrar" style="--i:0;" href="../login/login.html">Entrar</a>
+                <a class="cadastrar" style="--i:1;" href="../cadastro/cadastro.html">Cadastrar</a>
             </div>
         </nav>
-
     </header>
-
-
     <section>
         <div class="fundo__video">
             <img src="./img/LogoSemFundo.png">
@@ -38,16 +34,13 @@
                 <source src="./img/DesignSemNome.mp4" type="video/mp4">
                 Seu navegador não suporta o elemento de vídeo.
             </video>
-
             <!-- <div class="content">
             </div> -->
         </div>
-
-
     </section>
-<!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
-<h1 class="chamada">NOSSOS ATIVOS</h1>
-<div class="informacao__acoes">
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <h1 class="chamada">NOSSOS ATIVOS</h1>
+    <div class="informacao__acoes">
         <!-- Divs com parágrafo e imagem -->
         <div class="acoes">
             <img src="./img/B3.PNG" alt="IBOVESPA">
@@ -62,7 +55,8 @@
         <div class="acoes">
             <img src="./img/Bradesco.PNG" alt="BRADESCO">
             <h3>BRADESCO</h3>
-            <p>Um dos maiores bancos privados do Brasil, oferece serviços financeiros como crédito, seguros e investimentos.</p>
+            <p>Um dos maiores bancos privados do Brasil, oferece serviços financeiros como crédito, seguros e
+                investimentos.</p>
         </div>
         <div class="acoes">
             <img src="./img/IFRA11.PNG" alt="IFRA11">
@@ -72,32 +66,36 @@
         <div class="acoes">
             <img src="./img/LFTS11.PNG" alt="LFTS11">
             <h3>LFTS11</h3>
-            <p>Fundo imobiliário focado em investimentos no setor logístico, especialmente em galpões e centros de distribuição.</p>
+            <p>Fundo imobiliário focado em investimentos no setor logístico, especialmente em galpões e centros de
+                distribuição.</p>
         </div>
     </div>
-
     <!-- Calculadora e Rastreador -->
-    <h1 class="chamada">O QUE TEMOS PARA VOCÊ  </h1>    
+    <h1 class="chamada">O QUE TEMOS PARA VOCÊ </h1>
     <div class="div__img__1">
         <p class="lorem1">
-            A página de <strong>GRAFICOS</strong> oferece uma visão detalhada e interativa de cinco importantes ativos do mercado financeiro:
-             Ibovespa, Copel, Bradesco, IFRA11 e LFTS11. A página é projetada para usuários que desejam monitorar o desempenho diário desses ativos ao longo de um período de 30 dias.
-             Cada ativo possui seu próprio gráfico dedicado que exibe a variação de preço ao longo do mês.
-             As informações estão representadas em gráficos de linhas, destacando os pontos de alta, baixa e as tendências de cada ativo.</p>
+            A página de <strong>GRAFICOS</strong> oferece uma visão detalhada e interativa de cinco importantes ativos
+            do mercado financeiro:
+            Ibovespa, Copel, Bradesco, IFRA11 e LFTS11. A página é projetada para usuários que desejam monitorar o
+            desempenho diário desses ativos ao longo de um período de 30 dias.
+            Cada ativo possui seu próprio gráfico dedicado que exibe a variação de preço ao longo do mês.
+            As informações estão representadas em gráficos de linhas, destacando os pontos de alta, baixa e as
+            tendências de cada ativo.</p>
         <img src="./img/Captura de tela 2024-09-18 150824.png" alt="Rastreador">
     </div>
-
     <div class="div__img__2">
         <img src="./img/Calculadora.jpeg" alt="Calculadora">
-            <p class="lorem2">Nossa <strong>CALCULADORA DE INVESTIMENTOS</strong> fornece uma ferramenta completa e interativa para simular
-                 e calcular os resultados de investimentos financeiros.
-                O gráfico interativo mostra o crescimento do investimento ao longo do tempo, considerando os aportes adicionais e a rentabilidade acumulada. 
-                O usuário pode observar a evolução dos ganhos com e sem os impostos sobre o lucro, facilitando a comparação.
-                 O gráfico se ajusta em tempo real conforme o usuário altera os parâmetros, permitindo uma análise imediata de diferentes cenários de investimento.
-            </p>
+        <p class="lorem2">Nossa <strong>CALCULADORA DE INVESTIMENTOS</strong> fornece uma ferramenta completa e
+            interativa para simular
+            e calcular os resultados de investimentos financeiros.
+            O gráfico interativo mostra o crescimento do investimento ao longo do tempo, considerando os aportes
+            adicionais e a rentabilidade acumulada.
+            O usuário pode observar a evolução dos ganhos com e sem os impostos sobre o lucro, facilitando a comparação.
+            O gráfico se ajusta em tempo real conforme o usuário altera os parâmetros, permitindo uma análise imediata
+            de diferentes cenários de investimento.
+        </p>
     </div>
-<!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
     <footer class="footer">
         <h2>Contatos dos desenvolvedores</h2>
         <div class="container">
@@ -157,7 +155,6 @@
             </div>
         </div>
     </footer>
-    <script src="apresentacao.js"></script>
+    <script src="./apresentacao.js"></script>
 </body>
-
 </html>
