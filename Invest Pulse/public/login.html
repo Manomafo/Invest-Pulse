@@ -12,20 +12,20 @@
 
 <body>
     <div class="box">
-        <form>
+        <form id="login-form">
             <div class="title">
                 <h1>INVEST PULSE</h1>
             </div>
 
             <div class="input-box">
-                <label for="text" class="label-color"> E-mail ou usuário</label>
+                <label for="text" class="label-color"> E-mail</label>
                 <div class="content-input">
 
                     <span class="material-symbols-outlined" style="color: #cdd1d2;">
                         person
                     </span>
 
-                    <input id="text" name="text" type="text" class="" placeholder="Nome" required />
+                    <input id="email" name="email" type="email" placeholder="E-mail" required />
                 </div>
 
                 <label for="password" class="label-color"> Senha</label>
@@ -36,7 +36,7 @@
                     </span>
 
                     <input id="password" name="password" type="password" placeholder="Senha" required />
-                    <div onclick="togleVisibility()">
+                    <div id="eye">
 
                         <span id="visibility" class="material-symbols-outlined"
                             style="color: #cdd1d2; background-color: transparent; border: none; cursor: pointer;">
@@ -54,20 +54,20 @@
                 </div>
 
                 <input type="submit" class="Login" value="Entrar" />
-                <p class="link-text">Esqueceu a senha ? <a href="../public/senha.html">
+                <p class="link-text">Esqueceu a senha ? <a href="../senha.html">
                         Clique aqui</a></p>
 
                 <p class="link-text">
                     Não tem uma conta ?
 
-                    <a href="../public/cadastro.html">
+                    <a href="../cadastro.html">
                         Clique aqui</a>
 
                 </p>
             </div>
         </form>
     </div>
-    <script src="../src/login/login.js"></script>
+    <script type="module" src="../src/login/login.js"></script>
 </body>
 
 </html>

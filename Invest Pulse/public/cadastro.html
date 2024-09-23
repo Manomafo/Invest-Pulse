@@ -10,31 +10,31 @@
 
 <body>
     <div class="box">
-        <form>
+        <form id="register-form">
             <div class="title">
                 <h1>Cadastro</h1>
             </div>
             <div class="input-box">
-                <label for="text" class="label-color"> Nome completo</label>
-                <input id="text" name="text" type="text" placeholder="Seu nome aqui" required />
+                <label for="full-name" class="label-color"> Nome completo</label>
+                <input id="full-name" name="full-name" type="text" placeholder="Seu nome aqui" required />
 
-                <label for="password" class="label-color"> CPF</label>
-                <input id="password" name="password" type="number" placeholder="CPF" required />
+                <label for="cpf" class="label-color"> CPF</label>
+                <input id="cpf" name="cpf" type="number" placeholder="CPF" required />
 
-                <label for="Telefone" class="label-color"> Telefone celular</label>
-                <input id="Telefone" name="Telefone" type="number" placeholder="(ddd)99999-9999" required />
+                <label for="phone-number" class="label-color"> Telefone celular</label>
+                <input id="phone-number" name="phone-number" type="number" placeholder="(ddd)99999-9999" required />
 
                 <label for="email" class="label-color"> E-mail</label>
                 <input id="email" name="email" type="email" placeholder="E-mail" required />
 
-                <label for="email" class="label-color"> Confirmar e-mail</label>
-                <input id="email" name="email" type="email" placeholder="E-mail" required />
+                <label for="email-confirm" class="label-color"> Confirmar e-mail</label>
+                <input id="email-confirm" name="email-confirm" type="email" placeholder="E-mail" required />
 
                 <label for="password" class="label-color"> Senha</label>
                 <input id="password" name="password" type="text" placeholder="Senha" required />
 
-                <label for="password" class="label-color"> Confirmar Senha</label>
-                <input id="password" name="password" type="text" placeholder="Senha" required />
+                <label for="password-confirm" class="label-color"> Confirmar Senha</label>
+                <input id="password-confirm" name="password-confirm" type="text" placeholder="Senha" required />
 
                 <button type="submit" class="Login" value="Enviar">Enviar</button>
 
@@ -42,7 +42,7 @@
             </div>
         </form>
     </div>
+    <script type="module" src="../src/cadastro/cadastro.js" defer></script>
 </body>
-<script src="../src/cadastro/cadastro.js"></script>
 
 </html>
