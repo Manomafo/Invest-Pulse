@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.investpulse.api.dto.UserRequestDTO;
 import com.investpulse.api.dto.UserResponseDTO;
 import com.investpulse.api.dto.UserPatchUpdateDTO;
+import com.investpulse.api.dto.UserPostLoginDTO;
 import com.investpulse.api.dto.UserPutUpdateDTO;
 import com.investpulse.api.service.UserService;
 
@@ -48,6 +49,11 @@ public class UserController {
         @PostMapping
         private ResponseEntity<UserResponseDTO> postCreateUser(@RequestBody @Valid UserRequestDTO user) {
                 return ResponseEntity.status(HttpStatus.CREATED).body(userService.postCreateUser(user));
+        }
+
+        @PostMapping("/login")
+        private ResponseEntity<UserResponseDTO> postLoginUser(@RequestBody @Valid UserPostLoginDTO user) {
+                return ResponseEntity.status(HttpStatus.OK).body(userService.postLoginUser(user));
         }
 
         @PutMapping("/{email}")

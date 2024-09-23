@@ -10,12 +10,15 @@ import org.springframework.stereotype.Service;
 import com.investpulse.api.dto.UserRequestDTO;
 import com.investpulse.api.dto.UserResponseDTO;
 import com.investpulse.api.dto.UserPatchUpdateDTO;
+import com.investpulse.api.dto.UserPostLoginDTO;
 import com.investpulse.api.dto.UserPutUpdateDTO;
 import com.investpulse.api.exception.EntityAlreadyExistsException;
 import com.investpulse.api.exception.NotFoundException;
 import com.investpulse.api.model.User;
 import com.investpulse.api.repository.UserRepository;
 import com.investpulse.api.util.PasswordEncryptor;
+
+import jakarta.validation.Valid;
 
 @Service
 public class UserService {
@@ -64,6 +67,21 @@ public class UserService {
         user.setPassword(encryptor.encrypt(user.getPassword()));
         return userRepository.save(user.toUser()).toUserResponseDTO();
 
+    }
+
+    public UserResponseDTO postLoginUser(@Valid UserPostLoginDTO user) {
+        Optional<User> optionalUser = userRepository.findById(user.getEmail());
+        if (!optionalUser.isPresent()) {
+            throw new NotFoundException();
+        }
+
+        User existingUser = optionalUser.get();
+
+        if (!encryptor.matches(user.getPassword(), existingUser.getPassword())) {
+            throw new NotFoundException();
+        }
+
+        return existingUser.toUserResponseDTO();
     }
 
     public UserResponseDTO putUpdateUser(String email, UserPutUpdateDTO user) {
@@ -120,4 +138,5 @@ public class UserService {
             userRepository.deleteById(email);
         }
     }
+
 }
