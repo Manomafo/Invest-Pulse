@@ -1,7 +1,8 @@
-const ctx = document.getElementById('chart').getContext('2d');
-
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
+
+
+const ctx = document.getElementById('chart').getContext('2d');
 
 
 let chart = new Chart(ctx, {
